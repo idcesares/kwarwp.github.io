@@ -66,14 +66,14 @@
             from browser import alert as at
             from browser.local_storage import storage as str
             from browser import window as wd
-            from kwarwp.main import Main
+            from main import Main
             main = Main(svg=svg, doc=document, html=ht, win=wd,
                         alr=at, sto=str, cena="SIMPLES")
             main.paint_scenes()
        </script>
     </head>
     <body onLoad="brython({debug:1, cache:'browser', static_stdlib_import:true,
-    pythonpath :['/kwarwp/code']})"
+    pythonpath :['/kwarwp/code/kwarwp']})"
         >
         <div id="backdiv"  title="" style="width: 99%;
             height: 99%;
