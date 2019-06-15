@@ -27,7 +27,7 @@ import traceback
 from random import choice, random
 from math import pi
 
-# from .kuarup import Kuarup
+from kuarup import Kuarup
 
 # seed(27356)
 random()
