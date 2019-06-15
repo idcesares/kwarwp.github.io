@@ -22,9 +22,9 @@
 .. moduleauthor:: Carlo Oliveira <carlo@nce.ufrj.br>
 
 """
-from .kuarup import Kuarup
-from .brython_factory import GUI
-from .kuarupfest import Mapas
+from kuarup import Kuarup
+from brython_factory import GUI
+# from .kuarupfest import Mapas
 CENAS = [
     'INICIO', 'ROCHAS', 'CORREDOR', 'CORREDOR_ROCHOSO', 'E_PAU_E_PEDRA', 'E_O_FIM', 'DO_CAMINHO', 'E_O_RESTO', 'ZIGZAG', 'CARACOL',
     'BETUMES', 'BETUMES_ROCHAS', 'POR_ONDE', 'RECORDAR_E_VIVER', 'PISA_NA_FULO',

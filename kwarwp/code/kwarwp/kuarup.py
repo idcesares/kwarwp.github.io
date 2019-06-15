@@ -19,7 +19,7 @@ __date__ = "2011/02/19 $Date$"
 
 # import time
 # from threading import Event, Thread
-from .kuarupfest import Mapas
+from kuarupfest import Mapas
 '''
 try:
     from .tkinter_factory import GUI, CANVASW, CANVASH

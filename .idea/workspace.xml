@@ -2,41 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff1b5131-d56d-4227-a29d-bb919dd47ced" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/kwarwp.github.io.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/bulma.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/bulma.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/codemirror.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/roboto.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/solarized.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/active-line.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/brython.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/brython_modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/brython_stdlib.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/codemirror.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/glow.2.7.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/matchbrackets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/python-hint.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/python.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/show-hint.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/canv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/colors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/kuarupfest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/svg_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/svgcanvas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/tkinter_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kwarwp/kwarwp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py" beforeDir="false" afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kwarwp/code/kwarwp/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/kwarwp/code/kwarwp/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kwarwp/kwarwp.html" beforeDir="false" afterPath="$PROJECT_DIR$/kwarwp/kwarwp.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,11 +24,44 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kwarwp/kwarwp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+              <folding>
+                <element signature="e#897#922#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#897#907#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -130,8 +132,11 @@
         <option value="$PROJECT_DIR$/infra/help.html" />
         <option value="$PROJECT_DIR$/infra/about.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/kwarwp/kwarwp.html" />
         <option value="$PROJECT_DIR$/code/kwarwp.html" />
+        <option value="$PROJECT_DIR$/kwarwp/kwarwp.html" />
+        <option value="$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py" />
+        <option value="$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py" />
+        <option value="$PROJECT_DIR$/kwarwp/code/kwarwp/main.py" />
       </list>
     </option>
   </component>
@@ -184,6 +189,19 @@
               <item name="kwarwp.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="kwarwp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kwarwp.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kwarwp.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="kwarwp" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kwarwp.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kwarwp.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="kwarwp" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="kwarwp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -227,19 +245,27 @@
       <option name="project" value="LOCAL" />
       <updated>1560612345198</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial site with full game, added css files">
+      <created>1560612418026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560612418026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1600" height="873" extended-state="6" />
+    <frame x="0" y="27" width="1600" height="873" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3292517" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3292517" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -255,7 +281,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial site with full game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial site with full game" />
+    <MESSAGE value="Initial site with full game, added css files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial site with full game, added css files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -300,8 +327,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kwarwp/kwarwp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        <state relative-caret-position="270">
+          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/kuarup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+          <folding>
+            <element signature="e#897#922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kwarwp/code/kwarwp/brython_factory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#897#907#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
