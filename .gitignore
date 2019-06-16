@@ -105,6 +105,7 @@ venv.bak/
 
 # pycharm
 .idea
+.idea/
 
 # MS cache
 XDG_CACHE_HOME
