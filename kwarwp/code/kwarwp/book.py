@@ -45,25 +45,13 @@ TEXTO = [
     aterrorizado o que sobrou de sua adeia. Tchuk enxuga suas lágrimas e segue seu caminho.
     """,
     """<div style="width:100%; text-align: center;">
-    <H2>Página 1 Ácido Desoxirribonucleico</H2>
+    <H2>TERRA XAKRIABÁ</H2>
     <br>
-    <img src="https://i.imgur.com/TMzO0uw.jpg" width=300 />
+    <img src="https://i.imgur.com/aHl1xfa.jpg" width=300 />
     </div>
-    <br/><br/>Chamas e sange tingem de vermelho
+    <br/><br/>Chamas e sange tingiram de vermelho
     o chão, o céu e o branco dos seus olhos, magoados de tanto chorar.
-    O DNA (ácido desoxirribonucleico) é um
-    tipo de ácido nucleico que possui
-    destaque por armazenar a informação
-    genética da grande maioria dos seres
-    vivos. Essa molécula é formada por
-    nucleotídeos e apresenta,geralmente,
-    a forma de uma dupla-hélice. Nos
-    organismos eucarióticos,o DNA é
-    encontrado no núcleo da célula, nas
-    mitocôndrias e nos cloroplastos.
-    Nos procariontes, o DNA está localizado
-    em uma região que não é delimitada por
-    membrana, denominada de nucleoide.
+    A fome aperta, hora de buscar comida.
     """,
     """<div style="width:100%; text-align: center;">
     <H2>2 Os Cromossomos</H2>
@@ -125,12 +113,13 @@ class Livro:
             style=dict(left=60, top=0, width=380, margin="10px 0px"))
         jogo.i.inicia()
         self.cria_o_livro()
+        self.index_itens()
         # cromo = self.cria_pagina(vai=lambda: self.cria_pagina(
         #     quadro=self.jogo.sala.A.sul, tit="pagina2", left=310, top=340))
         # jogo.clica_elemento = cromo.chave_cromossomo
         # cromo.chave_cromossomo(cena=self.jogo.sala.A.norte)
 
-    def vai(self, *_):
+    def abre(self, *_):
         self.cena_livro_aberto.vai()
 
     def cria_o_livro(self):
@@ -142,16 +131,12 @@ class Livro:
             def vai(self, *_):
                 print("PaginaAnterior", self.livro.pagina_atual)
                 if self.livro.pagina_atual == 0:
-                    self.livro.fecha_livro()
                     return False
                 self.livro.pagina_atual -= 1
                 self.livro.texto_da_pagina_do_livro.topo.html = TEXTO[self.livro.pagina_atual]
 
         _livro_fechado = "https://i.imgur.com/ty2fWuE.gif"
         _livro_aberto = "https://i.imgur.com/sI177hV.jpg"
-        livro = self.jogo.a(_livro_fechado, tit="caderno de notas",
-                            style=dict(left=280, top=500, width=60, height="60px"))
-        # livro.entra(self.jogo.sala.B.leste)
         self.cena_livro_aberto = cena_livro = self.jogo.c(_livro_aberto, PaginaAnterior(self), self)
         self.texto_da_pagina_do_livro.entra(cena_livro)
 
@@ -160,14 +145,7 @@ class Livro:
             self.cena_onde_estou_no_jogo = self.jogo.i.cena
             cena_livro.vai()
 
-        def pega_livro(*_):
-            self.clica_livro = abre_livro
-            livro.img.title = "caderno, clique para abrir"
-            self.jogo.i.bota(livro)
-
         self.abre_livro = abre_livro
-        self.clica_livro = pega_livro
-        livro.vai = lambda *_: self.clica_livro()
 
     def clica_elemento(self):
         pass
@@ -194,30 +172,6 @@ class Livro:
                 self.height, self.left, self.top, self.width = height, left, top, width
                 self.quadro, self.tit, self.papel = quadro, tit, None
                 self.aviso = self.jogo.n(quadro, aviso)  # , foi=livro)
-                # self.cria_papel()
-
-            # def cria_papel(self, ):
-            #     self.papel = self.jogo.a(
-            #         "https://i.imgur.com/YqUFpx4.jpg", tit=self.tit,
-            #         # "https://i.imgur.com/YU3IFrt.jpg", tit=tit,
-            #         style=dict(left=self.left, top=self.top, width=self.width, height=self.height),
-            #         cena=self.quadro, vai=self.vai)
-
-            def chave_cromossomo(self, _=None, cena=None):
-                aviso = self.livro.cria_aviso(
-                    cena=cena if cena else self.livro.cena_livro_aberto,  # foi=cria_chave,
-                    tit="Use este cartão para abrir um baú.", msg="Arraste o cartão até a fechadura.")
-                aviso.vai()
-
-                _ = self.livro.cria_arrastante(
-                    cena=self.jogo.i, drag=True, img="https://i.imgur.com/mdHOJ9y.jpg",
-                    tit="cartao que abre bau", vai=aviso.vai)
-                self.jogo.clica_elemento = lambda *_: None
-                self.livro.cria_arrastante(
-                    drags={"cartao que abre bau": lambda a=aviso: a.vai()},
-                    drop=True, drag=False, img="https://i.imgur.com/3V2OwVV.png", tit="arraste o cartão aqui",
-                    style=dict(left=500, top="400px", width=50, height="80px"),
-                    cena=self.jogo.sala.C.leste, vai=aviso.vai)
 
             def vai(self, event=None):
                 self.aviso.vai()
@@ -236,6 +190,26 @@ class Livro:
         self.pagina_final += 1
         event.stopPropagation() if event else None
 
+    def index_itens(self):
+        def xk(*_):
+            Xakriaba(self.jogo).abre()
+        ca = self.cena_livro_aberto
+        param = dict(cena=ca, w=40, h=40)
+        forest = self.jogo.a("/image/forest.jpg", x=480, y=80, w=300, h=500, tipo="cover")
+        forest.entra(self.cena_livro_aberto)
+        self.jogo.a("/image/saida.gif", tit="terra pataxó", x=662, y=145, **param)
+        self.jogo.a("/image/saida.gif", tit="terra pataxó", x=560, y=240, **param)
+        self.jogo.a("/image/saida.gif", tit="terra terena", x=663, y=240, **param)
+        self.jogo.a("/image/saida.gif", tit="terra mundukuru", x=560, y=340, **param)
+        self.jogo.a("/image/saida.gif", tit="terra pataxó", x=665, y=340, **param)
+        self.jogo.a("/image/saida.gif", tit="terra pataxó", x=661, y=440, **param)
+        self.jogo.a("/image/saida.gif", tit="terra pataxó", x=562, y=440, **param)
+        mist = self.jogo.a("/image/mist.png", x=400, y=180, w=460, h=540, tipo="100% 100%", style=dict(opacity=0.7))
+        mist.entra(self.cena_livro_aberto)
+        mist = self.jogo.a("/image/mist.png", x=540, y=40, w=290, h=240, tipo="100% 100%", style=dict(opacity=0.7))
+        mist.entra(self.cena_livro_aberto)
+        self.jogo.a("/image/saida.gif", tit="terra xakriabá", x=510, y=140, vai=xk, **param)
+
     def fecha_livro(self, *_):
         self.clica_livro = self.abre_livro
         self.cena_onde_estou_no_jogo.vai()
@@ -247,119 +221,17 @@ class Livro:
         self.pagina_atual += 1
         self.texto_da_pagina_do_livro.topo.html = TEXTO[self.pagina_atual]
 
-    def cria_arrastante(self, **kwargs):
 
-        class Elemento(self.jogo.a):
+class Xakriaba(Livro):
+    def __init__(self, jogo):
+        super().__init__(jogo)
+        self.cena = jogo.c()
+        self.texto_da_pagina_do_livro.topo.html = TEXTO[1]
+        self.texto_da_pagina_do_livro.code = '''print("xexéu")
+if x or y: return True'''
 
-            def __init__(self, img="", tit="", cena=None, drag=True, drop=False, drags=None, jogo=self.jogo, **_kwargs):
-                super().__init__(tit=f"{tit}", **_kwargs)
-                self._drag = self._over = self._drop = self._dover = self.vai = lambda *_: False
-                self.jogo = jogo
-                elt_style = {"background-image": f"url('{img}')", "background-size": "cover", "cursor": "move"}
-                inv_style = {'opacity': "inherited", 'width': 30, 'height': "30px",
-                             'min-height': '30px', 'float': 'left', 'position': 'unset'}
-                self.style.update(elt_style)
-                self.style.update(inv_style if (cena == self.jogo.i) else {})
-                self.entra(cena) if cena else None
-                # self.style = elt_style
-                # self.scorer, self.xy = {}, 0
-                # self.elt = html.DIV(Id=tit, title=tit, style=self.style)
-                self.elt.style = self.style
-                # self.img.id = tit
-
-                self.elt.onclick = self._click
-                self.elt.bind("dragstart", lambda ev: self._drag(ev))
-                self.elt.onmouseover = lambda ev: self._dover(ev)
-                self.elt.ondrop = lambda ev: self._drop(ev)
-                self.elt.ondragover = lambda ev: self._over(ev)
-                """
-                self.img.onclick = self._click
-                self.img.ondragstart = lambda ev: self._drag(ev)
-                self.img.onmouseover = lambda ev: self._over(ev)
-                self.img.ondrop = lambda ev: self._drop(ev)
-                self.img.ondragover = lambda ev: self._dover(ev)
-                """
-                self.do_drag(drag)
-                self.do_drop(drop)
-                self.drags = drags if drags else DICT
-
-            def foi(self):
-                self._do_foi()
-
-            def _do_foi(self):
-                self.do_drag(False)
-                self._do_foi = lambda *_: None
-
-            @property
-            def tit(self):
-                return self.elt.title
-
-            @tit.setter
-            def tit(self, texto):
-                self.elt.title = texto
-
-            @staticmethod
-            def _click(ev):
-                _ = ev
-                print("def _click(ev):")
-                return False
-
-            @staticmethod
-            def mouse_over(ev):
-                # ev.preventDefault()
-                print("def drag_start(ev)mouse_over:", ev.target.id)
-                ev.target.style.cursor = "move"
-                return False
-
-            def drag_start(self, ev):
-                _ = self
-                # ev.preventDefault()
-                print("def drag_start(ev):", ev.target.id)
-                ev.data['text'] = ev.target.id
-                ev.data.effectAllowed = 'move'
-                # ev.dataTransfer.setData("text", ev.target.id)
-                # ev.dataTransfer.effectAllowed = "move"
-                print("def drag_start(ev):", ev.target.id, ev.data['text'])
-                # ev.stopPropagation()
-                return True
-
-            def do_drag(self, drag=True):
-                # self.img.draggable = drag
-                self.elt.draggable = drag
-                if drag:
-                    self._drag = self.drag_start
-                    self._over = self.mouse_over
-                    self._dover = self.drag_over
-                else:
-                    self._drag = self._over = lambda *_: None
-
-            def do_drop(self, drop=False):
-                if drop:
-                    self._drop = self.drop
-                    self._dover = self.drag_over
-                else:
-                    self._drop = self._dover = lambda *_: None
-
-            @staticmethod
-            def drag_over(ev):
-                _ = ev
-                # ev.data.dropEffect = 'move'
-                # ev.dataTransfer.dropEffect = "move"
-                # ev.preventDefault()
-                return False
-
-            def drop(self, ev):
-                ev.preventDefault()
-                ev.stopPropagation()
-                src_id = ev.data['text']
-                print("def drop(self, ev):", src_id)
-                # src_id = ev.dataTransfer.getData('text')
-
-                self.drags.setdefault(src_id, lambda: None)()
-                self.do_drag(False)
-                return False
-
-        return Elemento(**kwargs)
+    def index_itens(self):
+        pass
 
 
 class Main:
@@ -370,7 +242,7 @@ class Main:
         self.livro = Livro(j)
 
     def paint_scenes(self):
-        self.livro.vai()
+        self.livro.abre()
 
 
 def main(**kwargs):
