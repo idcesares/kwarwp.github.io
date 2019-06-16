@@ -109,3 +109,4 @@ venv.bak/
 
 # MS cache
 XDG_CACHE_HOME
+.idea/workspace.xml
