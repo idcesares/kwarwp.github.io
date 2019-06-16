@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# pycharm
+.idea
+
+# MS cache
+XDG_CACHE_HOME
