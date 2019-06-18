@@ -88,6 +88,7 @@ class Notebook(Elemento):
         istyle = dict(EIMGSTY)
         istyle.update(opacity=0.3)
         self.cell = [self.kind[kind](content) for kind, content in codigo]
+        self.codigo = "".join(c.code for c in self.cell)
         if img:
             self.img = html.IMG(src=img, style=istyle)
             self.elt <= self.img
@@ -110,6 +111,8 @@ class Notebook(Elemento):
 
 import unittest
 
+HI = """<H1> ola</H1>
+![spam](egg)"""
 class MyCase(unittest.TestCase):
 
     def testItIsSunny(self):
@@ -122,6 +125,10 @@ class MyCase(unittest.TestCase):
 
     def testImage(self):
         x = Notebook([(0, "![spam](egg)")]).cell[0].code
+        self.assertEquals(x, '<img src="egg" alt="spam"></img>', x)
+
+    def testHeadImage(self):
+        x = Notebook([(0, HI)]).codigo
         self.assertEquals(x, '<img src="egg" alt="spam"></img>', x)
 
 if __name__ == "__main__":
