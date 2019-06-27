@@ -35,10 +35,10 @@ Notebook Com Anotações Markdown.
 `Vitollino em Github <https://github.com/carlotolla/vitollino>`_
 
 """
-from vitollino import Elemento, PSTYLE, EIMGSTY, INVENTARIO
+from vitollino import Elemento, PSTYLE, EIMGSTY, INVENTARIO, NS
 from browser import html, win
 import re
-ps = [re.compile(x)for x in "^(#+)( .*)$©^!(\[.*\])\(.*\)"]
+ps = [re.compile(x)for x in r"^(#+)( .*)$©^!\[(.*)\]\((.*)\)".split("©")]
 
 
 class Notebook(Elemento):
@@ -57,14 +57,16 @@ class Notebook(Elemento):
     def __init__(self, codigo=[], cena=INVENTARIO, img="", vai=None, style=NS):
         class Mark:
             def __init__(self, code):
+                self.keys = {"#": self.header, "!": self.image}
                 self.code = code = self.process(code)
                 self.div = html.DIV(code)
-                self.keys = {"#": self.header, "!": self.image}
             def process(self, code):
-                code = "".join(cd for cd in re.finditer(ps, code))
+                code = "".join(self.keys[cd.group(0)[0]](cd) for rx in ps for cd in re.finditer(rx, code))
                 return code
             def header(self, rg):
-                return "<H{l}>{c}</H{l}>".format(l=len(rg.group(0)), c=rg.group(1))
+                return "<H{l}>{c}</H{l}>".format(l=len(rg.group(1)), c=rg.group(2))
+            def image(self, rg):
+                return '<img src="{c}" alt="{l}"></img>'.format(l=rg.group(1), c=rg.group(2))
                     
         class Code(Mark):
             def __init__(self, code):
@@ -86,13 +88,10 @@ class Notebook(Elemento):
         istyle = dict(EIMGSTY)
         istyle.update(opacity=0.3)
         self.cell = [self.kind[kind](content) for kind, content in codigo]
+        self.codigo = "".join(c.code for c in self.cell)
         if img:
             self.img = html.IMG(src=img, style=istyle)
             self.elt <= self.img
-        if topo:
-            self.topo = html.DIV(color="black", style=dict(padding="15px"))
-            self.topo.html = topo
-            self.elt <= self.topo
         self.elt.onclick = self._click
         self.scorer = dict(ponto=1, valor=cena.nome, carta=img, casa=self.xy, move=None)
         self._code = html.CODE(codigo)
@@ -112,15 +111,25 @@ class Notebook(Elemento):
 
 import unittest
 
+HI = """<H1> ola</H1>
+![spam](egg)"""
 class MyCase(unittest.TestCase):
 
     def testItIsSunny(self):
-        x = Notebook([(0, "## ola")]).code
+        x = Notebook([(0, "## ola")]).cell[0].code
         self.assertEquals(x, "<H2> ola</H2>", x)
 
     def testItIsHot(self):
-        x = Notebook([(0, "# ola")]).code
+        x = Notebook([(0, "# ola")]).cell[0].code
         self.assertEquals(x, "<H1> ola</H1>", x)
+
+    def testImage(self):
+        x = Notebook([(0, "![spam](egg)")]).cell[0].code
+        self.assertEquals(x, '<img src="egg" alt="spam"></img>', x)
+
+    def testHeadImage(self):
+        x = Notebook([(0, HI)]).codigo
+        self.assertEquals(x, '<img src="egg" alt="spam"></img>', x)
 
 if __name__ == "__main__":
     unittest.main()
